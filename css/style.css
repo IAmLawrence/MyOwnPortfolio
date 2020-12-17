@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* this is the custom properties in css, call mo lang yung parang variable for ex.: --clr-accent, kapag eto nilagay mo
+na color sa bg mo, magiging aganto kulay nya */
+/* format sa pag call ng variable: var(name_ng_varaible) */
+:root {
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+/* etong @media naman na to base sa observation ko eto yung when you minimize mo yun browser mo ang aadjust
+yung font nya kapag naka max yung browser hanggang 4.5rem yung font ng fs-h1 pero kapag maliit naman nagiging 
+3rem sya */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body:1.125rem;
+    }
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+.section-intro {
+   margin-bottom: .25em; 
+}
+
+
+.section_intro--name {
+    font-weight: var(--fw-reg);
+}
+
+.section_intro--name strong {
+    font-weight: var(--fw-bold);
+}
+
+.section_intro--title {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section_intro--description {
+    background: var(--clr-accent);
+}
